@@ -32,6 +32,10 @@ pipeline {
         archiveArtifacts 'target/*.jar'
       }
     }
+    
+    
+    //testing the pull request
+    
     stage('Publish test result') {
       steps {
         junit 'target/**/*.xml'
