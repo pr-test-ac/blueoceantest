@@ -27,13 +27,11 @@ pipeline {
 
       }
     }
-
     stage('Archive Artifact') {
       steps {
         archiveArtifacts 'target/*.jar'
       }
     }
-
     stage('Publish test result') {
       steps {
         junit 'target/**/*.xml'
