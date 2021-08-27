@@ -21,7 +21,10 @@ pipeline {
 
     stage('Package') {
       steps {
-        sh 'mvn package'
+        withMaven(jdk: 'jdk11', maven: 'maven3') {
+          sh 'mvn package'
+        }
+
       }
     }
 
